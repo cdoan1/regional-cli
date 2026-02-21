@@ -2,11 +2,11 @@
 
 ## Purpose
 
-_Describe the purpose of the regional-cli project_
+A customer facing cli, `rosactl` that will interact with the platform api, authenticates via AWS IAM with SigV4 signing, that allows customers to create hypershift clusters on the rosa regional hcp platform
 
 ## Goals
 
-- Goal 1
+- authenticates via AWS IAM with SigV4 signing
 - Goal 2
 - Goal 3
 
@@ -16,4 +16,5 @@ _Describe the purpose of the regional-cli project_
 
 ## Success Criteria
 
-_Define what success looks like for this project_
+using the `rosactl`, be able to setup their aws account
+then use the `rosactl` cli to trigger the creation of a hypershift cluster
