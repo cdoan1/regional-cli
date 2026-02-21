@@ -1,0 +1,112 @@
+# Reference Projects
+
+This document lists GitHub repositories that serve as guardrails and guidelines for the development of regional-cli.
+
+## Reference Repositories
+
+### [hyperfleet-api](https://github.com/openshift-hyperfleet/hyperfleet-api)
+**Purpose:** Implements the hyperfleet api, one of the components of CLM.
+
+**Key Takeaways:**
+- 
+- 
+- 
+
+**Relevant Areas:**
+- 
+
+### [hyperfleet-adapter](https://github.com/openshift-hyperfleet/hyperfleet-adapter)
+**Purpose:** Implements the hyperfleet adapter, one of the components of CLM
+
+**Key Takeaways:**
+- 
+- 
+- 
+
+**Relevant Areas:**
+- 
+
+### [hyperfleet-sentinel](https://github.com/openshift-hyperfleet/hyperfleet-sentinel)
+**Purpose:** Implements the hyperfleet sentinel, one of the components of CLM
+
+**Key Takeaways:**
+- 
+- 
+- 
+
+**Relevant Areas:**
+- 
+
+
+### [hypershift](https://github.com/openshift/hypershift)
+**Purpose:** Implements the hypershift compoent
+
+**Key Takeaways:**
+- the rosa regional hcp service deployes hypershift clusters
+
+**Relevant Areas:**
+- hypershift cli can create oidc provider in the customer account, some of our cli functions can draw from this repository
+
+### [maestro](https://github.com/openshift-online/maestro)
+**Purpose:** Implements the maestro server and agent
+
+**Key Takeaways:**
+- maestro server and agent implement mqtt message bus that allows transport of configuration and state between server and agaent
+
+**Relevant Areas:**
+- handles transport between regional cluster and management cluster
+
+### [rosa-regional-platform-api](https://github.com/openshift-online/rosa-regional-platform-api)
+
+**Purpose:** Implements the backend passthrough api that this cli will connect to
+
+**Key Takeaways:**
+- What patterns or approaches to follow
+- What to avoid
+- Specific implementation details to reference
+
+**Relevant Areas:**
+- backend that this cli will connect too
+- implements authz based on cedar policies
+
+
+### [rosa-regional-platform](https://github.com/openshift-online/rosa-regional-platform)
+
+**Purpose:** The main platform repo where key design decision docs are stored for entire rosa regional service
+
+**Key Takeaways:**
+- Creates the infrastructure and deploys the components that implement the service
+- Sets up the api gateway that the platform api sits behind
+- Documents the major design decisions across the service
+
+**Relevant Areas:**
+- this repo deploys the service infractucture
+- customers use the cli to interact with the platform api and thus the platform deployed on this infrastucture
+
+
+### [rosa](https://github.com/openshift/rosa)
+**Purpose:** Implements the current rosa cli tool customers use to interact with the rosa hcp service.
+
+**Key Takeaways:**
+- CLI structure and command organization
+- Authentication patterns
+- API client patterns
+
+**Relevant Areas:**
+- Overall CLI architecture
+- Command structure
+- API integration
+
+### [ocm-cli](https://github.com/openshift-online/ocm-cli)
+
+**Purpose:** Reference implementation for OpenShift CLI tooling patterns
+
+**Key Takeaways:**
+- CLI structure and command organization
+- Authentication patterns
+- API client patterns
+
+**Relevant Areas:**
+- Overall CLI architecture
+- Command structure
+- API integration
