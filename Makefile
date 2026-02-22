@@ -18,6 +18,16 @@ GOLINT=golangci-lint
 # Build flags
 LDFLAGS=-ldflags "-s -w"
 
+# Export GOTOOLCHAIN to allow automatic Go version management
+export GOTOOLCHAIN=auto
+
+# Use Homebrew Go 1.22.5 if available, which can handle toolchain downloads
+ifeq ($(shell uname), Darwin)
+    ifneq (,$(wildcard /opt/homebrew/Cellar/go/1.22.5/bin/go))
+        export PATH := /opt/homebrew/Cellar/go/1.22.5/bin:$(PATH)
+    endif
+endif
+
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 

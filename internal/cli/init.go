@@ -74,14 +74,12 @@ func runInit(cmd *cobra.Command, args []string) error {
 			fmt.Printf("Validating Platform API connectivity to %s...\n", platformAPIURL)
 		}
 
-		platformValidator := validator.NewPlatformValidator(platformAPIURL)
+		platformValidator := validator.NewPlatformValidator(platformAPIURL, awsConfig)
 		platformResult, err := platformValidator.Validate(ctx)
 
 		if err != nil {
 			fmt.Printf("✗ Platform API validation failed\n")
-			if verbose {
-				fmt.Printf("  Error: %s\n", platformResult.ErrorMessage)
-			}
+			fmt.Printf("  Error: %s\n", platformResult.ErrorMessage)
 			return err
 		}
 
@@ -92,7 +90,9 @@ func runInit(cmd *cobra.Command, args []string) error {
 
 		fmt.Printf("✓ Platform API reachable\n")
 		if verbose {
-			fmt.Printf("  URL: %s\n", platformAPIURL)
+			fmt.Printf("  Base URL: %s\n", platformAPIURL)
+			fmt.Printf("  Live endpoint: %s/prod/v0/live\n", platformAPIURL)
+			fmt.Printf("  Response: %s\n", platformResult.APIVersion)
 		}
 	} else {
 		if verbose {
