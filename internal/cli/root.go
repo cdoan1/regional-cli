@@ -39,6 +39,7 @@ It enables customers to provision and manage HyperShift clusters with AWS IAM au
 	// Add subcommands
 	rootCmd.AddCommand(NewInitCommand())
 	rootCmd.AddCommand(NewSetupAccountCommand())
+	rootCmd.AddCommand(NewWhoamiCommand())
 
 	return rootCmd
 }
